@@ -16,4 +16,4 @@ There are six main statuses:
 The in-game status will have details of the ongoing day-night phase and later the winner faction.
 
 ### Requirements
-*DiscordRpc.dll* and *Newtonsoft.Json.dll* must be along with *SalemRichPresence.dll*.
+*DiscordRPC.dll* and *Newtonsoft.Json.dll* must be along with *SalemRichPresence.dll*.
