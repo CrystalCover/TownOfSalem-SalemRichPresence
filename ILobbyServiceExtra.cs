@@ -1,4 +1,4 @@
-﻿using DiscordRPC;
+using DiscordRPC;
 using HarmonyLib;
 using System.Collections.Generic;
 using static System.DateTime;
