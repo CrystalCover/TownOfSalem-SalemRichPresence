@@ -1,4 +1,4 @@
-﻿using DiscordRPC;
+using DiscordRPC;
 using HarmonyLib;
 using static Scene;
 using static System.DateTime;
@@ -8,9 +8,9 @@ namespace Eca.SalemRichPresence
     [HarmonyPatch(typeof(IApplicationService), "RaiseOnSceneLoaded")]
     internal class IApplicationServiceExtra
     {
-        private static DiscordRpcClient DiscordRpcClient => Plugin.DiscordRpcClient;
+        private static string coven => "coven";
 
-        private static RichPresence CurrentPresence => DiscordRpcClient.CurrentPresence;
+        private static string tos => "tos";
 
         private static string offline => "offline";
 
@@ -20,11 +20,11 @@ namespace Eca.SalemRichPresence
 
         private static string Online => "Online";
 
+        private static DiscordRpcClient DiscordRpcClient => Plugin.DiscordRpcClient;
+
+        private static RichPresence CurrentPresence => DiscordRpcClient.CurrentPresence;
+
         internal static Timestamps Timestamps { get; set; }
-
-        private static string coven => "coven";
-
-        private static string tos => "tos";
 
         private static void Postfix(Scene scene)
         {
@@ -46,8 +46,7 @@ namespace Eca.SalemRichPresence
                     largeImageKey = GlobalServiceLocator.UserService.AccountFlags.OwnsCoven ? coven : tos;
                     smallImageKey = online;
                     smallImageText = state = Online;
-                    if (Timestamps == null)
-                        Timestamps = new Timestamps(UtcNow);
+                    Timestamps = Timestamps ?? new Timestamps(UtcNow);
                     break;
                 default:
                     return;
