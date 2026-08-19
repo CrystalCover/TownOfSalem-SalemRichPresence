@@ -7,6 +7,7 @@ There are six main statuses:
 <br><img src="inparty.png" width="200px"><img src="inlobby.png" width="200px"><img src="ingame.png" width="200px">
 
 The large image in the offline status depends on whether the Steam service is available and your Steam account has the Coven DLC.
+<br>
 The large image in the other statuses depends on whether the account you are logged in with has the Coven premium.
 
 The in-game status will include details of the ongoing day-night phase and, later, the winning faction.
